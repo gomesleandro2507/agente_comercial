@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agente Comercial Brasil | Inteligência de Prospecção & Mercado</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Bar -->
+    <header class="top-header">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Agente Comercial de Inteligência de Mercado</h1>
+          <p class="subtitle">Recomendação de clientes ideais baseada em exigências do produto e oferta x demanda no Brasil</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="badge online-badge">
+          <span class="dot"></span> Sistema Operacional
+        </span>
+        <button id="btn-import-toggle" class="btn btn-secondary btn-sm" title="Importar ou Gerenciar Base de Clientes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Base de Leads (<span id="clients-count-badge">10</span>)
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Grid Layout -->
+    <main class="main-layout">
+      <!-- Coluna Esquerda: Definição do Produto & Mapa Regional -->
+      <section class="left-panel">
+        
+        <!-- Card: Configuração do Produto -->
+        <div class="card product-card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <span class="step-tag">Etapa 1</span>
+              <h2>Especificações do Produto</h2>
+            </div>
+            <div class="preset-selector">
+              <label for="preset-select">Exemplos rápidos:</label>
+              <select id="preset-select" class="form-select-sm">
+                <option value="custom">-- Selecione um Modelo --</option>
+                <option value="agro">Telemetria & Automação Agrícola (Grãos/Silos)</option>
+                <option value="saude">IA de Triagem & Auditoria Hospitalar</option>
+                <option value="logistica">Roteirização & Gestão de Frotas de Carga</option>
+                <option value="tech">Segurança & Observabilidade Cloud B2B</option>
+              </select>
+            </div>
+          </div>
+
+          <form id="product-form" class="product-form">
+            <div class="form-group">
+              <label for="product-name">Nome da Solução / Produto *</label>
+              <input type="text" id="product-name" class="form-input" required placeholder="Ex: AgroVision Telemetria IoT">
+            </div>
+
+            <div class="form-group">
+              <label for="product-desc">Proposta de Valor & Descrição *</label>
+              <textarea id="product-desc" class="form-textarea" rows="2" required placeholder="Descreva os benefícios, problema resolvido e tecnologia envolvida..."></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="product-sector">Setor Principal *</label>
+                <select id="product-sector" class="form-select" required>
+                  <option value="Agronegócio">Agronegócio</option>
+                  <option value="Saúde">Saúde</option>
+                  <option value="Indústria">Indústria</option>
+                  <option value="Tecnologia & Software">Tecnologia & Software</option>
+                  <option value="Logística & Transporte">Logística & Transporte</option>
+                  <option value="Varejo & Consumo">Varejo & Consumo</option>
+                  <option value="Serviços & Financeiro">Serviços & Financeiro</option>
+                  <option value="Energia & Sustentabilidade">Energia & Sustentabilidade</option>
+                </select>
+              </div>
+              <div class="form-group col-6">
+                <label for="product-ticket">Ticket Médio Estimado (R$) *</label>
+                <input type="number" id="product-ticket" class="form-input" value="15000" min="500" step="500" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="product-delivery">Modelo de Atendimento</label>
+                <select id="product-delivery" class="form-select">
+                  <option value="Cloud / Remoto">Cloud / 100% Remoto</option>
+                  <option value="Híbrido (Remoto + Implantação Local)">Híbrido (Remoto + Visita)</option>
+                  <option value="Presencial Obrigatório">Presencial Obrigatório</option>
+                </select>
+              </div>
+              <div class="form-group col-6">
+                <label>Portes de Empresa Elegíveis</label>
+                <div class="checkbox-pill-group">
+                  <label class="pill-checkbox"><input type="checkbox" name="company_size" value="Médio Porte" checked> Médio</label>
+                  <label class="pill-checkbox"><input type="checkbox" name="company_size" value="Grande Porte" checked> Grande</label>
+                  <label class="pill-checkbox"><input type="checkbox" name="company_size" value="Corporativo / Muito Grande" checked> Corp</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Regiões Geográficas Atendidas</label>
+              <div class="checkbox-pill-group regions-group">
+                <label class="pill-checkbox"><input type="checkbox" name="target_region" value="Centro-Oeste" checked> Centro-Oeste</label>
+                <label class="pill-checkbox"><input type="checkbox" name="target_region" value="Sul" checked> Sul</label>
+                <label class="pill-checkbox"><input type="checkbox" name="target_region" value="Sudeste" checked> Sudeste</label>
+                <label class="pill-checkbox"><input type="checkbox" name="target_region" value="Nordeste" checked> Nordeste</label>
+                <label class="pill-checkbox"><input type="checkbox" name="target_region" value="Norte" checked> Norte</label>
+              </div>
+            </div>
+
+            <button type="submit" id="btn-analyze" class="btn btn-primary btn-block">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <span>Avaliar Mercado & Qualificar Melhores Clientes</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Card: Visão de Oferta e Demanda no Brasil -->
+        <div class="card market-overview-card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <span class="step-tag tag-blue">Inteligência</span>
+              <h2>Oferta x Demanda Regional no Brasil</h2>
+            </div>
+            <span class="text-muted-xs">Atualizado 2026</span>
+          </div>
+          <p class="section-desc">
+            O algoritmo cruza a demanda reprimida com a saturação de concorrentes por macrorregião. 
+            Regiões com <strong>Alta Demanda e Menor Oferta</strong> proporcionam menor disputa predatória de preços.
+          </p>
+
+          <div id="regions-grid" class="regions-grid">
+            <!-- Gerado dinamicamente via JS -->
+            <div class="loading-state">Carregando matriz de inteligência regional...</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Coluna Central/Direita: Resultados Ranqueados & Chat com Agente -->
+      <section class="right-panel">
+        
+        <!-- Abas de Navegação Superior da Direita -->
+        <div class="panel-tabs">
+          <button class="tab-btn active" data-target="recommendations-view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Clientes Recomendados (<span id="results-count">0</span>)
+          </button>
+          <button class="tab-btn" data-target="chat-view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Chat Consultivo com o Agente
+          </button>
+        </div>
+
+        <!-- View 1: Recomendações Ranqueadas -->
+        <div id="recommendations-view" class="tab-content active">
+          <div class="results-header-bar">
+            <div>
+              <h3 id="recommendations-title">Ranking de Aderência Comercial</h3>
+              <p class="text-muted-sm" id="recommendations-subtitle">Preencha o produto ao lado para gerar a qualificação inteligente.</p>
+            </div>
+            <div id="filter-region-chips" class="quick-filter-chips">
+              <span class="filter-chip active" data-filter="all">Todas as Regiões</span>
+              <span class="filter-chip" data-filter="Centro-Oeste">Centro-Oeste</span>
+              <span class="filter-chip" data-filter="Sul">Sul</span>
+              <span class="filter-chip" data-filter="Sudeste">Sudeste</span>
+              <span class="filter-chip" data-filter="Nordeste">Nordeste</span>
+              <span class="filter-chip" data-filter="Norte">Norte</span>
+            </div>
+          </div>
+
+          <div id="recommendations-list" class="recommendations-list">
+            <!-- Card de boas-vindas / vazio -->
+            <div class="empty-placeholder">
+              <div class="placeholder-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              </div>
+              <h4>Nenhum produto analisado ainda</h4>
+              <p>Escolha um dos exemplos rápidos acima ou preencha as especificações do seu produto e clique em "Avaliar Mercado & Qualificar Melhores Clientes".</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- View 2: Chat com o Agente Comercial -->
+        <div id="chat-view" class="tab-content">
+          <div class="chat-container">
+            <div class="chat-header-info">
+              <div class="agent-avatar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 3.25 1.93 6.04 4.7 7.27.3.13.5.42.5.75v1.98c0 .55.45 1 1 1h7.6a1 1 0 0 0 1-1v-1.98c0-.33.2-.62.5-.75A8.01 8.01 0 0 0 20 10a8 8 0 0 0-8-8z"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+              </div>
+              <div>
+                <h4>Agente Comercial Especialista (Brasil)</h4>
+                <p class="text-muted-xs">Postura consultiva, educada e rigorosa quanto às exigências do seu produto.</p>
+              </div>
+            </div>
+
+            <!-- Sugestões de Perguntas Rápidas -->
+            <div class="quick-prompts-bar">
+              <span class="text-muted-xs">Perguntas frequentes:</span>
+              <button class="chip-prompt" data-prompt="Quem é o cliente número 1 e por que a oferta e demanda na região dele favorece nossa entrada?">🏆 Cliente mais indicado</button>
+              <button class="chip-prompt" data-prompt="Como a concorrência na região Sudeste se compara à oportunidade no Centro-Oeste e Nordeste?">⚖️ Comparar Oferta x Demanda</button>
+              <button class="chip-prompt" data-prompt="Pode criar uma mensagem de abordagem educada e personalizada para o decisor do cliente líder?">✉️ Mensagem de abordagem</button>
+            </div>
+
+            <!-- Mensagens do Chat -->
+            <div id="chat-messages" class="chat-messages">
+              <div class="message message-agent">
+                <div class="message-bubble">
+                  Prezado(a), é uma honra auxiliá-lo(a) na identificação dos clientes mais adequados para a sua solução. 
+                  <br><br>
+                  Estou pronto para analisar seu produto, verificar o alinhamento de requisitos técnicos e detalhar as oportunidades de oferta e demanda em cada região do Brasil. Como posso apoiá-lo(a) agora?
+                </div>
+                <span class="message-time">Agente Comercial</span>
+              </div>
+            </div>
+
+            <!-- Input do Chat -->
+            <form id="chat-form" class="chat-input-row">
+              <input type="text" id="chat-input" class="form-input" placeholder="Faça uma pergunta sobre clientes ideais, regiões ou viabilidade..." required>
+              <button type="submit" id="btn-send-chat" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Modal de Importação de Leads / CSV -->
+    <div id="modal-import" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Importar Base Própria de Clientes (CSV)</h3>
+          <button id="btn-close-modal" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted-sm">
+            Você pode importar sua própria lista de leads/empresas em arquivo CSV. 
+            O arquivo deve conter colunas como: <code>name, sector, size, state, city, current_pain_points, budget_capacity</code>.
+          </p>
+          <div class="file-drop-area" id="file-drop-area">
+            <input type="file" id="csv-file-input" accept=".csv" class="file-input">
+            <div class="file-drop-label">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <span>Arraste o arquivo CSV ou clique para selecionar</span>
+            </div>
+          </div>
+          <div id="import-feedback" class="import-feedback"></div>
+        </div>
+        <div class="modal-footer">
+          <button id="btn-cancel-modal" class="btn btn-secondary">Cancelar</button>
+          <button id="btn-do-upload" class="btn btn-primary" disabled>Enviar Arquivo CSV</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+{
+  "updated_at": "2026-09-01",
+  "regions": {
+    "Norte": {
+      "name": "Norte",
+      "code": "NO",
+      "states": ["AM", "PA", "TO", "RO", "AC", "AP", "RR"],
+      "gdp_share_percent": 5.8,
+      "logistics_difficulty": "Alta",
+      "general_competition_level": "Baixa",
+      "sector_dynamics": {
+        "Agronegócio": { "demand_index": 78, "supply_competition_index": 35, "market_opportunity": "Muito Alta" },
+        "Indústria": { "demand_index": 82, "supply_competition_index": 45, "market_opportunity": "Alta (Foco Polo Manaus)" },
+        "Tecnologia & Software": { "demand_index": 75, "supply_competition_index": 28, "market_opportunity": "Muito Alta" },
+        "Saúde": { "demand_index": 85, "supply_competition_index": 30, "market_opportunity": "Crítica / Muito Alta" },
+        "Varejo & Consumo": { "demand_index": 70, "supply_competition_index": 50, "market_opportunity": "Média" },
+        "Serviços & Financeiro": { "demand_index": 65, "supply_competition_index": 40, "market_opportunity": "Média-Alta" },
+        "Energia & Sustentabilidade": { "demand_index": 90, "supply_competition_index": 30, "market_opportunity": "Excelente" }
+      },
+      "strategic_notes": "Mercado com demanda reprimida por tecnologia e serviços especializados; menor pressão competitiva local, mas requer planejamento logístico e canais locais."
+    },
+    "Nordeste": {
+      "name": "Nordeste",
+      "code": "NE",
+      "states": ["BA", "PE", "CE", "RN", "PB", "MA", "AL", "SE", "PI"],
+      "gdp_share_percent": 14.2,
+      "logistics_difficulty": "Média",
+      "general_competition_level": "Média",
+      "sector_dynamics": {
+        "Agronegócio": { "demand_index": 80, "supply_competition_index": 45, "market_opportunity": "Alta (Fruticultura / MATOPIBA)" },
+        "Indústria": { "demand_index": 72, "supply_competition_index": 50, "market_opportunity": "Média-Alta (Polos Camaçari/Suape)" },
+        "Tecnologia & Software": { "demand_index": 82, "supply_competition_index": 42, "market_opportunity": "Muito Alta (Hubs Recife/Fortaleza)" },
+        "Saúde": { "demand_index": 84, "supply_competition_index": 48, "market_opportunity": "Alta (Polos médicos em expansão)" },
+        "Varejo & Consumo": { "demand_index": 85, "supply_competition_index": 62, "market_opportunity": "Alta" },
+        "Serviços & Financeiro": { "demand_index": 76, "supply_competition_index": 52, "market_opportunity": "Média-Alta" },
+        "Energia & Sustentabilidade": { "demand_index": 95, "supply_competition_index": 55, "market_opportunity": "Líder Nacional em Renováveis" }
+      },
+      "strategic_notes": "Região em forte ascensão econômica, com polos consolidados de inovação e grande demanda por modernização e eficiência de custos."
+    },
+    "Centro-Oeste": {
+      "name": "Centro-Oeste",
+      "code": "CO",
+      "states": ["MT", "MS", "GO", "DF"],
+      "gdp_share_percent": 10.4,
+      "logistics_difficulty": "Média-Alta",
+      "general_competition_level": "Média",
+      "sector_dynamics": {
+        "Agronegócio": { "demand_index": 98, "supply_competition_index": 65, "market_opportunity": "Excepcional (Maior ticket médio agrícola)" },
+        "Indústria": { "demand_index": 75, "supply_competition_index": 45, "market_opportunity": "Alta (Agroindústria / Alimentos)" },
+        "Tecnologia & Software": { "demand_index": 88, "supply_competition_index": 40, "market_opportunity": "Muito Alta (Agtech, ERP, Automação)" },
+        "Saúde": { "demand_index": 80, "supply_competition_index": 55, "market_opportunity": "Alta" },
+        "Varejo & Consumo": { "demand_index": 82, "supply_competition_index": 58, "market_opportunity": "Alta" },
+        "Serviços & Financeiro": { "demand_index": 85, "supply_competition_index": 60, "market_opportunity": "Alta (Setor Corporativo e Público)" },
+        "Energia & Sustentabilidade": { "demand_index": 86, "supply_competition_index": 45, "market_opportunity": "Muito Alta (Biomassa, Solar)" }
+      },
+      "strategic_notes": "Região com o maior poder aquisitivo por cliente no agronegócio e forte demanda por automação e soluções de alto valor agregado."
+    },
+    "Sudeste": {
+      "name": "Sudeste",
+      "code": "SE",
+      "states": ["SP", "RJ", "MG", "ES"],
+      "gdp_share_percent": 53.1,
+      "logistics_difficulty": "Baixa",
+      "general_competition_level": "Muito Alta",
+      "sector_dynamics": {
+        "Agronegócio": { "demand_index": 82, "supply_competition_index": 78, "market_opportunity": "Competitiva (Interior de SP e MG)" },
+        "Indústria": { "demand_index": 90, "supply_competition_index": 88, "market_opportunity": "Volume Massivo / Forte Guerra de Preços" },
+        "Tecnologia & Software": { "demand_index": 96, "supply_competition_index": 92, "market_opportunity": "Maior Mercado / Alta Concorrência" },
+        "Saúde": { "demand_index": 94, "supply_competition_index": 85, "market_opportunity": "Alta complexidade / Exigente" },
+        "Varejo & Consumo": { "demand_index": 95, "supply_competition_index": 90, "market_opportunity": "Gigante, requer diferenciação clara" },
+        "Serviços & Financeiro": { "demand_index": 96, "supply_competition_index": 92, "market_opportunity": "Centro Financeiro Nacional" },
+        "Energia & Sustentabilidade": { "demand_index": 88, "supply_competition_index": 75, "market_opportunity": "Alta demanda corporativa ESG" }
+      },
+      "strategic_notes": "Maior polo econômico da América Latina. Demanda imensa em volume financeiro, mas com alta saturação de concorrentes; exige proposta de valor única e ROI comprovado."
+    },
+    "Sul": {
+      "name": "Sul",
+      "code": "S",
+      "states": ["PR", "SC", "RS"],
+      "gdp_share_percent": 16.5,
+      "logistics_difficulty": "Baixa-Média",
+      "general_competition_level": "Alta",
+      "sector_dynamics": {
+        "Agronegócio": { "demand_index": 90, "supply_competition_index": 72, "market_opportunity": "Muito Alta (Cooperativas e Agroindústria)" },
+        "Indústria": { "demand_index": 88, "supply_competition_index": 76, "market_opportunity": "Forte polo metalmecânico, têxtil e alimentício" },
+        "Tecnologia & Software": { "demand_index": 89, "supply_competition_index": 70, "market_opportunity": "Excelente aceitação para inovação técnica" },
+        "Saúde": { "demand_index": 86, "supply_competition_index": 68, "market_opportunity": "Alta qualidade e maturidade de gestão" },
+        "Varejo & Consumo": { "demand_index": 84, "supply_competition_index": 74, "market_opportunity": "Estável e maduro" },
+        "Serviços & Financeiro": { "demand_index": 85, "supply_competition_index": 68, "market_opportunity": "Forte setor cooperativo de crédito" },
+        "Energia & Sustentabilidade": { "demand_index": 87, "supply_competition_index": 60, "market_opportunity": "Muito Alta (Eficiência energética e biogás)" }
+      },
+      "strategic_notes": "Cultura de gestão profissional e cooperativismo forte. Clientes valorizam confiabilidade, suporte técnico rigoroso e comprovação de resultados operacionais."
+    }
+  },
+  "state_modifiers": {
+    "SP": { "region": "Sudeste", "name": "São Paulo", "demand_boost": 1.25, "competition_boost": 1.35, "logistics_score": 98 },
+    "RJ": { "region": "Sudeste", "name": "Rio de Janeiro", "demand_boost": 1.05, "competition_boost": 1.15, "logistics_score": 90 },
+    "MG": { "region": "Sudeste", "name": "Minas Gerais", "demand_boost": 1.10, "competition_boost": 1.05, "logistics_score": 88 },
+    "ES": { "region": "Sudeste", "name": "Espírito Santo", "demand_boost": 0.95, "competition_boost": 0.90, "logistics_score": 89 },
+    "PR": { "region": "Sul", "name": "Paraná", "demand_boost": 1.10, "competition_boost": 1.05, "logistics_score": 92 },
+    "SC": { "region": "Sul", "name": "Santa Catarina", "demand_boost": 1.12, "competition_boost": 1.02, "logistics_score": 94 },
+    "RS": { "region": "Sul", "name": "Rio Grande do Sul", "demand_boost": 1.05, "competition_boost": 1.05, "logistics_score": 88 },
+    "MT": { "region": "Centro-Oeste", "name": "Mato Grosso", "demand_boost": 1.20, "competition_boost": 0.85, "logistics_score": 75 },
+    "MS": { "region": "Centro-Oeste", "name": "Mato Grosso do Sul", "demand_boost": 1.05, "competition_boost": 0.82, "logistics_score": 78 },
+    "GO": { "region": "Centro-Oeste", "name": "Goiás", "demand_boost": 1.12, "competition_boost": 0.92, "logistics_score": 85 },
+    "DF": { "region": "Centro-Oeste", "name": "Distrito Federal", "demand_boost": 1.15, "competition_boost": 1.10, "logistics_score": 95 },
+    "BA": { "region": "Nordeste", "name": "Bahia", "demand_boost": 1.08, "competition_boost": 0.95, "logistics_score": 82 },
+    "PE": { "region": "Nordeste", "name": "Pernambuco", "demand_boost": 1.06, "competition_boost": 0.92, "logistics_score": 84 },
+    "CE": { "region": "Nordeste", "name": "Ceará", "demand_boost": 1.04, "competition_boost": 0.90, "logistics_score": 83 },
+    "AM": { "region": "Norte", "name": "Amazonas", "demand_boost": 1.05, "competition_boost": 0.75, "logistics_score": 65 },
+    "PA": { "region": "Norte", "name": "Pará", "demand_boost": 1.08, "competition_boost": 0.70, "logistics_score": 68 },
+    "TO": { "region": "Norte", "name": "Tocantins", "demand_boost": 0.98, "competition_boost": 0.65, "logistics_score": 74 }
+  }
+}

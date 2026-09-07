@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  agente-comercial:
+    build: .
+    container_name: agente_comercial_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    volumes:
+      - ./data:/app/data
