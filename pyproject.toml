@@ -1,0 +1,12 @@
+[project]
+name = "agente-comercial"
+version = "1.0.0"
+description = "Agente comercial de prospecção e inteligência de mercado"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.141.1",
+  "python-multipart==0.0.32",
+]
+
+[tool.vercel]
+entrypoint = "backend.app.main:app"

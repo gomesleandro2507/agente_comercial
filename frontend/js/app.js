@@ -211,6 +211,7 @@ function renderRecommendations(filterRegion = "all") {
             <span class="badge-tag">🏢 ${c.sector}</span>
             <span class="badge-tag">💼 ${c.size}</span>
             ${c.annual_revenue_bracket ? `<span class="badge-tag">💰 ${c.annual_revenue_bracket}</span>` : ""}
+            ${c.contact_name ? `<span class="badge-tag badge-contact">Contato identificado</span>` : `<span class="badge-tag badge-contact badge-contact-missing">Sem contato</span>`}
           </div>
         </div>
         <div class="score-badge-circle" title="Score Final Ponderado">
@@ -237,6 +238,7 @@ function renderRecommendations(filterRegion = "all") {
 
       <!-- Detalhes Estratégicos -->
       <div class="rec-strategic-block">
+        ${c.contact_name ? `<div class="contact-highlight"><div class="contact-icon">↗</div><div><span class="detail-title">Decisor sugerido</span><strong>${escapeHtml(c.contact_name)}</strong><span>${escapeHtml(c.contact_role || "Contato comercial")}</span></div></div>` : `<div class="contact-highlight contact-empty"><div class="contact-icon">?</div><div><span class="detail-title">Contato não identificado</span><span>Enriqueça este lead com uma fonte autorizada antes da abordagem.</span></div></div>`}
         <div class="rec-item-detail">
           <span class="detail-title">💡 Diagnóstico Comercial:</span>
           <span>${rec.commercial_recommendation}</span>
